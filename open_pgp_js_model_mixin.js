@@ -62,12 +62,6 @@ var OpenPgpJsModelMixin = Ember.Mixin.create( {
       return this.get( 'publicKeyAsKeyObject' ).getKeyPacket( ).getKeyId( ).toHex( );
     }
   }.property( 'publicKey' ),
-  bits: function( ) {
-    if ( this.get( 'isValid' ) ) {
-      return 'bits';
-      ////this.get( 'publicKeyAsKeyObject' ).getKeyPacket( ).byteLength( ) * 8;
-    }
-  }.property( 'publicKey' ),
   isValid: function( ) {
     return !( Ember.isNone( this.get( 'publicKey' ) ) );
   }.property( 'privateKey', 'publicKey' ),
